@@ -1,10 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace EFClassesMetodosAbstratos.Entities
+﻿namespace EFClassesMetodosAbstratos.Entities
 {
-    class Contribuinte
+    abstract class Contribuinte
     {
+        public string Nome { get; set; }
+        public double RendaAnual { get; set; }
+
+        protected Contribuinte()
+        {
+        }
+
+        protected Contribuinte(string nome, double rendaAnual)
+        {
+            Nome = nome;
+            RendaAnual = rendaAnual;
+        }
+
+        public abstract double imposto();
+
     }
 }
